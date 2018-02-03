@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import UserNotifications
+import SVProgressHUD
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,8 +17,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        
+        
+        window = UIWindow()
+        window?.backgroundColor = UIColor.white
+        window?.rootViewController = WBMainViewController()
+        window?.makeKeyAndVisible()
+        
+        loadAppInfo()
+        setupAdditions(application: application)
+        
         return true
+    }
+    
+    private func loadAppInfo() {
+        DispatchQueue.global().async {
+            let url = Bundle.main.url(forResource: "main.json", withExtension: nil)
+            let data = NSData(contentsOf: url!)
+            
+            let docDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+            let jsonPath = (docDir as NSString).appendingPathComponent("main.json")
+            data?.write(toFile: jsonPath, atomically: true)
+
+        }
+    }
+    
+    private func setupAdditions(application: UIApplication) {
+        
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound, .carPlay]) { (success, error) in
+                
+            }
+        } else {
+            let notifySettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            application.registerUserNotificationSettings(notifySettings)
+        }
+        
+        SVProgressHUD.setMinimumDismissTimeInterval(1)
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -43,4 +82,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
+
+
+
 

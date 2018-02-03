@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="WBComposeTypeButton" id="iN0-l3-epB" customClass="WBComposeTypeButton" customModule="新浪微博swift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6LG-0y-Nki">
+                    <rect key="frame" x="15" y="0.0" width="71" height="71"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="文字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5t-e5-HCH">
+                    <rect key="frame" x="36" y="83" width="29" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="B5t-e5-HCH" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="1YT-hp-hAA"/>
+                <constraint firstItem="B5t-e5-HCH" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="BDc-NJ-wKg"/>
+                <constraint firstItem="B5t-e5-HCH" firstAttribute="top" secondItem="6LG-0y-Nki" secondAttribute="bottom" constant="12" id="FLv-GS-BrJ"/>
+                <constraint firstItem="6LG-0y-Nki" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="KjM-I4-Dxn"/>
+                <constraint firstItem="6LG-0y-Nki" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="sE2-MP-PgN"/>
+                <constraint firstItem="6LG-0y-Nki" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="uxB-ip-W3K"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="imageView" destination="6LG-0y-Nki" id="o4c-9C-wdN"/>
+                <outlet property="titleLabel" destination="B5t-e5-HCH" id="2C5-sf-0WK"/>
+            </connections>
+        </view>
+    </objects>
+</document>

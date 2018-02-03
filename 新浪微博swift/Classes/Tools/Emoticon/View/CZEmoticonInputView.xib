@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="CZEmoticonInputView" id="JfA-Im-zWU" customClass="CZEmoticonInputView" customModule="新浪微博swift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="253"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="cellId" bounces="NO" pagingEnabled="YES" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Wlu-vx-Lo6">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="213"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="hEy-Ws-Nai" customClass="CZEmoticonLayout" customModule="新浪微博swift" customModuleProvider="target">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="JfA-Im-zWU" id="enL-hg-Py5"/>
+                        <outlet property="delegate" destination="JfA-Im-zWU" id="JCz-6f-jWY"/>
+                    </connections>
+                </collectionView>
+                <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="1" translatesAutoresizingMaskIntoConstraints="NO" id="bNV-LZ-b1y">
+                    <rect key="frame" x="187.5" y="221" width="0.0" height="0.0"/>
+                    <color key="pageIndicatorTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="currentPageIndicatorTintColor" red="1" green="0.42352941179999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                </pageControl>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rRz-GZ-1lw" customClass="CZEmoticonToolbar" customModule="新浪微博swift" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="213" width="375" height="40"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="7wT-OI-gEs"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="rRz-GZ-1lw" firstAttribute="top" secondItem="Wlu-vx-Lo6" secondAttribute="bottom" id="2Jj-Hj-fsY"/>
+                <constraint firstItem="Wlu-vx-Lo6" firstAttribute="top" secondItem="F6p-IL-4jn" secondAttribute="top" id="9Wd-Co-Ro4"/>
+                <constraint firstItem="rRz-GZ-1lw" firstAttribute="bottom" secondItem="F6p-IL-4jn" secondAttribute="bottom" id="Iof-O7-m3Y"/>
+                <constraint firstItem="Wlu-vx-Lo6" firstAttribute="leading" secondItem="F6p-IL-4jn" secondAttribute="leading" id="MuC-Yq-KOE"/>
+                <constraint firstItem="Wlu-vx-Lo6" firstAttribute="trailing" secondItem="F6p-IL-4jn" secondAttribute="trailing" id="QlF-kd-n53"/>
+                <constraint firstAttribute="bottom" secondItem="bNV-LZ-b1y" secondAttribute="bottom" constant="32" id="VRP-GW-Z7L"/>
+                <constraint firstItem="rRz-GZ-1lw" firstAttribute="leading" secondItem="F6p-IL-4jn" secondAttribute="leading" id="XX9-39-YJS"/>
+                <constraint firstItem="rRz-GZ-1lw" firstAttribute="trailing" secondItem="F6p-IL-4jn" secondAttribute="trailing" id="aSP-Ii-MJ4"/>
+                <constraint firstItem="bNV-LZ-b1y" firstAttribute="centerX" secondItem="JfA-Im-zWU" secondAttribute="centerX" id="dAA-wF-ZyC"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="F6p-IL-4jn"/>
+            <connections>
+                <outlet property="collectionView" destination="Wlu-vx-Lo6" id="fOk-7k-kOl"/>
+                <outlet property="pageControl" destination="bNV-LZ-b1y" id="TA1-tc-igm"/>
+                <outlet property="toolbar" destination="rRz-GZ-1lw" id="XaN-la-u9z"/>
+            </connections>
+            <point key="canvasLocation" x="58.5" y="68.5"/>
+        </view>
+    </objects>
+</document>
